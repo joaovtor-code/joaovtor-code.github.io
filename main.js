@@ -9,5 +9,8 @@ fetch("https://api.edmodo.com/stream.replies_threaded_json?request_origin=react-
     "method": "OPTIONS",
     "mode": "cors"
 }).then((response)=>{
-    document.getElementById('lpost').textContent = response.json();
+    return response.json()
+})
+.then((data)=>{
+    document.getElementById('lpost').textContent = data;
 })
